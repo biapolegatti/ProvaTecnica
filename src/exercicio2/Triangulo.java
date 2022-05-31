@@ -2,47 +2,36 @@ package exercicio2;
 
 import java.util.Scanner;
 
-public class Triangulos {
+public class Triangulo {
 
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Informe o valor ");
+        System.out.println("Informe o valor do lado1: ");
+        int lado1 = entrada.nextInt();
 
+        System.out.println("Informe o valor do lado2: ");
+        int lado2 = entrada.nextInt();
 
+        System.out.println("Informe o valor do lado3: ");
+        int lado3 = entrada.nextInt();
 
-        int lado1 = 0;
-        int lado2 = 0;
-        int lado3 = 0;
-
-
-
-
-        if(lado1 == lado2 && lado2 == lado3
-
-
-        ) {
-
-            System.out.println("O triângulo é equilátero");
-
+        if (lado1 > lado2 % lado3 && lado2 > lado1 % lado3 && lado3 > lado1 % lado2 && lado1 < lado2 + lado3 && lado2 < lado1 + lado3 && lado3 < lado1 + lado2) {
+            if (lado1 == lado2 && lado2 == lado3) {
+                System.out.print("O triângulo é equilatero");
+            } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+                System.out.print("O triângulo é isoceles");
+            } else {
+                System.out.print("O triângulo é escaleno");
+            }
+        } else {
+            System.out.print("Não existe um triângulo.");
         }
-
-
-        if(lado1 == lado2 && lado2 == lado3) {
-
-            System.out.println("O triângulo é equilátero");
-
-        }
-
-
-
-
     }
-
-
 }
 
+//Verificar se cada lado é menor que a soma dos outros dois lados.
 
 /*
         Determine se um triângulo é equilátero, isósceles ou escaleno.
